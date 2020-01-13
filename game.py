@@ -1,12 +1,15 @@
 import datetime
 import sqlite3
+from ascii_img.ask_user_name import ask_name
+from ascii_img.intro import intro
 from scripts.models import Enemy
 from scripts.models import Player
 #from exceptions import EnemyDown
 
 
 def play():
-    player_name = input("Enter your name ")
+    ask_name()
+    player_name = input("")
     player = Player(player_name)
     level = 1
     enemy = Enemy(level)
@@ -16,7 +19,7 @@ def play():
             level += 1
             enemy = Enemy(level)
             player.score += 5
-        print(player.score)
+        print(f"Your score is {player.score}")
         player.defence(enemy)
         print(player.score)
     conn = sqlite3.connect("data/scores.db")
@@ -32,7 +35,10 @@ def play():
 
 if __name__ == '__main__':
     try:
-        play()
+        intro()
+        first_input = input()
+        if first_input == "start":
+            play()
     except KeyboardInterrupt:
         print("Unacceptable character was entered!")
         pass

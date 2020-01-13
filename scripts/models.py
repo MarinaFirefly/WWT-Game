@@ -1,4 +1,9 @@
 import random
+from ascii_img.choice_of_hero import choice_of_hero
+from ascii_img.game_end import game_over
+from ascii_img.thief_win import thief_win
+from ascii_img.warrior_win import warrior_win
+from ascii_img.wizard_win import wizard_win
 #from exceptions import EnemyDown
 #from exceptions import GameOver
 
@@ -31,9 +36,29 @@ class Player:
         res = None
         if attack == defense:
             res = 0
-        elif (attack == 1 and defense == 2) or (attack == 2 and defense == 3) or (attack == 3 and defense == 1):
+        elif attack == 2 and defense == 1:
+            #print("Wizard wins!")
+            wizard_win()
             res = 1
-        elif (attack == 2 and defense == 1) or (attack == 3 and defense == 2) or (attack == 1 and defense == 3):
+        elif attack == 3 and defense == 2:
+            #print("Thief wins!")
+            thief_win()
+            res = 1
+        elif attack == 1 and defense == 3:
+            #print("Warrior wins!")
+            warrior_win()
+            res = 1
+        elif attack == 1 and defense == 2:
+            #print("Wizard wins!")
+            wizard_win()
+            res = -1
+        elif attack == 2 and defense == 3:
+            #print("Thief wins!")
+            thief_win()
+            res = -1
+        elif attack == 3 and defense == 1:
+            #print("Warrior wins!")
+            warrior_win()
             res = -1
         return res
 
@@ -41,15 +66,18 @@ class Player:
         self.lives -= 1
         if self.lives == 0:
            # raise GameOver
-            print ("You loosed last live! Game over!")
+            #print ("You loosed last live! Game over!")
+            game_over()
         return self.lives
 
     def choose_hero(self):
-        return int(input("Choose your hero"))
+        return int(input(''))
 
 #    @staticmethod
     def attack(self, enemy_obj):
+        print("Your turn!")
         enemy_attack = enemy_obj.select_attack()
+        choice_of_hero()
         player_attack = self.choose_hero()
         fight_result = self.fight(player_attack,enemy_attack)
         if fight_result == 0:
@@ -65,7 +93,9 @@ class Player:
 
 #    @staticmethod
     def defence(self, enemy_obj):
+        print("Enemy turn!")
         enemy_attack = enemy_obj.select_attack()
+        choice_of_hero()
         player_attack = self.choose_hero()
         fight_result = self.fight(enemy_attack,player_attack)
         if fight_result == 0:
