@@ -1,7 +1,15 @@
 """
 ASCII scene for character choose.
 """
+
+
 def choice_of_hero():
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE to choose hero
+    -------
+    '''
     print(r"""
                                           CHOOSE YOUR HERO
          ---------------------------------------------------------------------------------------

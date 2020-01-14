@@ -1,7 +1,15 @@
 """
 ASCII scene for Thief win case.
 """
+
+
 def thief_win():
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE Thief win
+    -------
+    '''
     print(r"""
 
 

@@ -3,7 +3,14 @@
 ASCII scene for game help print
 """
 
+
 def rules():
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE for Games rules
+    -------
+    '''
     print(r"""
 
                           _____                                     _           

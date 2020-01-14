@@ -1,3 +1,6 @@
+"""
+Test our asciioutput
+"""
 import time
 print(r"""
                                              ..ed$$$$$$$ee.

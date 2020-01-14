@@ -1,4 +1,8 @@
+"""
+Behavior of our game work
+"""
 import random
+
 from ascii_img.choice_of_hero import choice_of_hero
 from ascii_img.game_end import game_over
 from ascii_img.thief_win import thief_win
@@ -14,7 +18,7 @@ class Enemy:
 
     @staticmethod
     def select_attack():
-        return random.choice([1,2,3])
+        return random.choice([1, 2, 3])
 
     def decrease_lives(self):
         self.level -= 1
@@ -25,7 +29,7 @@ class Enemy:
 
 
 class Player:
-    def __init__(self, name, lives=5, score=0):#, allowed_attacks):
+    def __init__(self, name, lives=5, score=0):  # , allowed_attacks):
         self.name = name
         self.lives = lives
         self.score = score
@@ -79,7 +83,7 @@ class Player:
         enemy_attack = enemy_obj.select_attack()
         choice_of_hero()
         player_attack = self.choose_hero()
-        fight_result = self.fight(player_attack,enemy_attack)
+        fight_result = self.fight(player_attack, enemy_attack)
         if fight_result == 0:
             print("It's a draw!")
         elif fight_result == 1:
@@ -97,7 +101,7 @@ class Player:
         enemy_attack = enemy_obj.select_attack()
         choice_of_hero()
         player_attack = self.choose_hero()
-        fight_result = self.fight(enemy_attack,player_attack)
+        fight_result = self.fight(enemy_attack, player_attack)
         if fight_result == 0:
             print("It's a draw!")
         elif fight_result == 1:
