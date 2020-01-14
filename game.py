@@ -25,10 +25,10 @@ def play():
         print(player.score)
     conn = sqlite3.connect("data/scores.db")
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS scores (id serial, username text, score text, dt text)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS scores (id serial, username text, score integer, dt text)")
     cursor.execute("SELECT COUNT(*) FROM scores")
     new_id = cursor.fetchone()[0] + 1
-    now = datetime.datetime.today()
+    now = datetime.date.today()
     params = (new_id, player_name, int(player.score), now)
     cursor.execute("INSERT INTO scores VALUES (?,?,?,?)",params)
     conn.commit()
@@ -50,13 +50,19 @@ if __name__ == '__main__':
         elif first_input.lower() == "exit":
             pass
         elif first_input.lower() == "score":
-            conn = sqlite3.connect("data/scores.db")
-            cursor = conn.cursor()
-            cursor.execute("SELECT * FROM scores ORDER BY score DESC LIMIT 5")
-            scores_result = cursor.fetchall()
-            for result in scores_result:
-                print(f"{result[1]}     |   {result[3]}   |   {result[2]}")
-            conn.close()
+            try:
+                conn = sqlite3.connect("data/scores.db")
+                cursor = conn.cursor()
+                cursor.execute("SELECT * FROM scores ORDER BY score DESC LIMIT 10")
+                scores_result = cursor.fetchall()
+                if scores_result != []:
+                    for result in scores_result:
+                        print(f"{result[1]}     |   {result[3]}   |   {result[2]}")
+                else:
+                    print("NO RESULTS IN DB!")
+                conn.close()
+            except sqlite3.OperationalError:
+                pass
             new_game = input("WANT TO PLAY? (Y/N)   ")
             if new_game == "Y":
                 play()
@@ -69,4 +75,4 @@ if __name__ == '__main__':
         print("Unacceptable character was entered!")
         pass
     finally: 
-        print("Good bye!")
+        print("    GOOD BYE!")
