@@ -5,7 +5,14 @@ ASCII scene for GAMOVER .
 import time
 #from clear_screen import clear_screen
 
+
 def game_over():
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE at end of the game
+    -------
+    '''
     print(r"""
 
                  _____          __  __  ______      ________ _____  
@@ -49,7 +56,7 @@ def game_over():
 			""")
 
     time.sleep(2)
-    #clear_screen()
+    # clear_screen()
 
     print(r"""
 

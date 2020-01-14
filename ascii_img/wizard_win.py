@@ -1,7 +1,15 @@
 """
 ASCII scene for Wizard win case.
 """
+
+
 def wizard_win():
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE for wizard win
+    -------
+    '''
     print(r"""
 __          ___                  _                         _   _     _       _           _   _   _      
 \ \        / (_)                | |                       | | | |   (_)     | |         | | | | | |     

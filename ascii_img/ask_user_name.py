@@ -1,7 +1,16 @@
 """
 ASCII scene for username input.
 """
+
+
 def ask_name():
+    '''Print ASCII scene.
+
+    no params need
+    ----------
+    Returns jusp ASCII SCENE
+    -------
+    '''
     print(r"""
                  __
                 /__`.

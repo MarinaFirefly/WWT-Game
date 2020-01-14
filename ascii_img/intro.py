@@ -2,10 +2,17 @@
 ASCII scene for game begining
 """
 import time
-#from ascii_img.clear_screen import clear_screen
+# from ascii_img.clear_screen import clear_screen
+
 
 def intro():
-   print(r"""
+    '''Print ASCII scene.
+    no params need
+    ----------
+    Returns jutp ASCII SCENE for game intro
+    -------
+    '''
+    print(r"""
                                              ..ed$$$$$$$ee.
                                           zd$$*"".$$*$$F"**$$e.
                                         d$$"    .$$" ^$$c   ^*$$.
@@ -29,8 +36,8 @@ def intro():
                                          |______\___| \/ \___|______|
    """)
 
-   time.sleep(1)
-   print(r"""
+    time.sleep(1)
+    print(r"""
                    _____          __  __ ______  _____       _____ _______ _    _ _____ _____ ____  
                   / ____|   /\   |  \/  |  ____|/ ____|     / ____|__   __| |  | |  __ \_   _/ __ \ 
                  | |  __   /  \  | \  / | |__  | (___      | (___    | |  | |  | | |  | || || |  | |
@@ -39,13 +46,13 @@ def intro():
                   \_____/_/    \_\_|  |_|______|_____/     |_____/   |_|   \____/|_____/_____\____/ 
 
    """)
-   time.sleep(2)
+    time.sleep(2)
 
-   print('\n'+'\n')
+    print('\n'+'\n')
 
 #   clear_screen()
-   time.sleep(1)
-   print(r"""
+    time.sleep(1)
+    print(r"""
                       _____  _____   _____ ______ _   _ _______    _____          __  __ ______ 
                      |  __ \|  __ \ / ____|  ____| \ | |__   __|  / ____|   /\   |  \/  |  ____|
                      | |__) | |__) | (___ | |__  |  \| |  | |    | |  __   /  \  | \  / | |__   
@@ -54,9 +61,9 @@ def intro():
                      |_|    |_|  \_\_____/|______|_| \_|  |_|     \_____/_/    \_\_|  |_|______|
 
    """)
-   print('\n')
-   time.sleep(1)
-   print(r"""
+    print('\n')
+    time.sleep(1)
+    print(r"""
                                                     _______       
                                                    |__   __|      
                                              __      _| |_      __
@@ -65,9 +72,9 @@ def intro():
                                                \_/\_/ |_| \_/\_/  
                                                                  """)
 
-   time.sleep(2)
+    time.sleep(2)
 #   clear_screen()
-   print(r"""
+    print(r"""
 
                                        TYPE START TO DIVE INTO THE BATTLE!
                                           TYPE HELP TO SEE GAME RULES!
