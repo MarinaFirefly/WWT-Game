@@ -71,7 +71,7 @@ class Player:
         return self.lives
 
     def choose_hero(self):
-        return int(input(''))
+        return int(input('    '))
 
 #    @staticmethod
     def attack(self, enemy_obj):

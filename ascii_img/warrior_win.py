@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 ASCII scene for Thief win case.
 """
