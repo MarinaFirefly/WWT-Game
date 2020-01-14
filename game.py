@@ -29,12 +29,7 @@ def play():
         print(player.score)
     conn = sqlite3.connect("data/scores.db")
     cursor = conn.cursor()
-<<<<<<< HEAD
     cursor.execute("CREATE TABLE IF NOT EXISTS scores (id serial, username text, score integer, dt text)")
-=======
-    cursor.execute(
-        "CREATE TABLE IF NOT EXISTS scores (id serial, username text, score text, dt text)")
->>>>>>> 08d62afa508e952c1c981b5fa7b87cff124e9ed9
     cursor.execute("SELECT COUNT(*) FROM scores")
     new_id = cursor.fetchone()[0] + 1
     now = datetime.date.today()
