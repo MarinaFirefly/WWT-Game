@@ -76,9 +76,10 @@ def intro():
 #   clear_screen()
     print(r"""
 
-                                       TYPE START TO DIVE INTO THE BATTLE!
-                                          TYPE HELP TO SEE GAME RULES!
-                                          TYPE EXIT TO FINISH GAME!
-                                       TYPE SCORE TO SEE TABLE OF RESULTS!
+                                       TYPE "START" TO DIVE INTO THE BATTLE!
+                                          TYPE "HELP" TO SEE GAME RULES!
+                                          TYPE "EXIT" TO FINISH GAME!
+                                       TYPE "SCORE" TO SEE TABLE OF RESULTS!
+                                      TYPE "ABOUT US" TO SEE DEVS INFORMATION!
 
                """)

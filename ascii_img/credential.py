@@ -1,12 +1,12 @@
-#!/usr/bin/env python3
 """
 ASCII scene for credential Print.
 
 """
 import time
-from clear_screen import clear_screen
+#from clear_screen import clear_screen
 
-print(r"""
+def credential():
+    print(r"""
 
 
 
@@ -19,13 +19,13 @@ print(r"""
 
 
 
-""")
+    """)
 
-time.sleep(3)
-clear_screen()
+    time.sleep(1)
+    #clear_screen()
 
 
-print(r"""
+    print(r"""
 
                                      _____  ________      _______ 
                                     |  __ \|  ____\ \    / / ____|
@@ -34,21 +34,21 @@ print(r"""
                                     | |__| | |____   \  /  ____) |
                                     |_____/|______|   \/  |_____/ 
 
-""")
+    """)
 
-time.sleep(2)
-clear_screen()
+    time.sleep(1)
+    #clear_screen()
 
 
-print(r"""
+    print(r"""
           __  __            _                  _           _    _   _                             
          |  \/  |          (_)                | |         | |  | | (_)                            
          | \  / | __ _ _ __ _ _ __   __ _     | |     __ _| | _| |_ _  ___  _ __   _____   ____ _ 
          | |\/| |/ _` | '__| | '_ \ / _` |    | |    / _` | |/ / __| |/ _ \| '_ \ / _ \ \ / / _` |
          | |  | | (_| | |  | | | | | (_| |    | |___| (_| |   <| |_| | (_) | | | | (_) \ V / (_| |
          |_|  |_|\__,_|_|  |_|_| |_|\__,_|    |______\__,_|_|\_\\__|_|\___/|_| |_|\___/ \_/ \__,_|
-""")
-print(r"""
+    """)
+    print(r"""
                               _        _ _              _           _    _   _                        
             /\               | |      | (_)            | |         | |  | | (_)                       
            /  \   _ __   __ _| |_ ___ | |_ _   _       | |     __ _| | _| |_ _  ___  _ __   _____   __
@@ -57,23 +57,23 @@ print(r"""
         /_/    \_\_| |_|\__,_|\__\___/|_|_|\__, |      |______\__,_|_|\_\\__|_|\___/|_| |_|\___/ \_/  
                                             __/ |                                                     
                                            |___/ 
-""")
-time.sleep(4)
-clear_screen()
+    """)
+    time.sleep(1)
+    #clear_screen()
 
 
-print(r"""
+    print(r"""
                                                      _____  __  __ 
                                                     |  __ \|  \/  |
                                                     | |__) | \  / |
                                                     |  ___/| |\/| |
                                                     | |    | |  | |
                                                     |_|    |_|  |_|
-""")
+    """)
 
-time.sleep(1)
+    time.sleep(1)
 
-print(r"""
+    print(r"""
 
                                      _____                  __      __          _              
                                     |_   _|                 \ \    / /         | |             
@@ -85,4 +85,4 @@ print(r"""
                                           |___/  
                                     	  """)
 
-time.sleep(4)
+    time.sleep(1)

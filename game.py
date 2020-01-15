@@ -4,6 +4,7 @@ Main Runner for WTT game
 import datetime
 import sqlite3
 from ascii_img.ask_user_name import ask_name
+from ascii_img.credential import credential
 from ascii_img.help import rules
 from ascii_img.intro import intro
 from scripts.models import Enemy
@@ -12,9 +13,8 @@ from scripts.models import Player
 
 
 def play():
-
     ask_name()
-    player_name = input("           ")
+    player_name = input("   ")
     player = Player(player_name)
     level = 1
     enemy = Enemy(level)
@@ -26,10 +26,10 @@ def play():
             player.score += 5
         print(f"Your score is {player.score}")
         player.defence(enemy)
-        print(player.score)
     conn = sqlite3.connect("data/scores.db")
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS scores (id serial, username text, score integer, dt text)")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS 
+                scores (id serial, username text, score integer, dt text)""")
     cursor.execute("SELECT COUNT(*) FROM scores")
     new_id = cursor.fetchone()[0] + 1
     now = datetime.date.today()
@@ -42,19 +42,26 @@ def play():
 if __name__ == '__main__':
     try:
         intro()
-        first_input = input("    ")
-        if first_input.lower() == "start":
+        first_input = input("    ").lower()
+        if first_input == "start":
             play()
-        elif first_input.lower() == "help":
+        elif first_input == "help":
             rules()
             new_game = input("WANT TO PLAY? (Y/N)   ")
             if new_game == "Y":
                 play()
             elif new_game == "N":
                 pass
-        elif first_input.lower() == "exit":
+        elif first_input == "about us":
+            credential()
+            new_game = input("WANT TO PLAY? (Y/N)   ")
+            if new_game == "Y":
+                play()
+            elif new_game == "N":
+                pass
+        elif first_input == "exit":
             pass
-        elif first_input.lower() == "score":
+        elif first_input == "score":
             try:
                 conn = sqlite3.connect("data/scores.db")
                 cursor = conn.cursor()
@@ -75,10 +82,8 @@ if __name__ == '__main__':
                 pass
     except KeyboardInterrupt:
         print("Unacceptable character was entered!")
-        pass
     except ValueError:
         print("Unacceptable character was entered!")
-        pass
     finally:
-        print("Good bye!")
+        print("GOOD BYE!")
 

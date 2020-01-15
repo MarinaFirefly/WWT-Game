@@ -29,11 +29,10 @@ class Enemy:
 
 
 class Player:
-    def __init__(self, name, lives=5, score=0):  # , allowed_attacks):
+    def __init__(self, name, lives=5, score=0):
         self.name = name
         self.lives = lives
         self.score = score
-#        self.allowed_attacks = allowed_attacks
 
     @staticmethod
     def fight(attack, defense):
@@ -41,27 +40,21 @@ class Player:
         if attack == defense:
             res = 0
         elif attack == 2 and defense == 1:
-            #print("Wizard wins!")
             wizard_win()
             res = 1
         elif attack == 3 and defense == 2:
-            #print("Thief wins!")
             thief_win()
             res = 1
         elif attack == 1 and defense == 3:
-            #print("Warrior wins!")
             warrior_win()
             res = 1
         elif attack == 1 and defense == 2:
-            #print("Wizard wins!")
             wizard_win()
             res = -1
         elif attack == 2 and defense == 3:
-            #print("Thief wins!")
             thief_win()
             res = -1
         elif attack == 3 and defense == 1:
-            #print("Warrior wins!")
             warrior_win()
             res = -1
         return res
@@ -70,14 +63,12 @@ class Player:
         self.lives -= 1
         if self.lives == 0:
            # raise GameOver
-            #print ("You loosed last live! Game over!")
             game_over()
         return self.lives
 
     def choose_hero(self):
         return int(input('    '))
 
-#    @staticmethod
     def attack(self, enemy_obj):
         print("Your turn!")
         enemy_attack = enemy_obj.select_attack()
@@ -95,7 +86,6 @@ class Player:
         else:
             print('User entered wrong data!')
 
-#    @staticmethod
     def defence(self, enemy_obj):
         print("Enemy turn!")
         enemy_attack = enemy_obj.select_attack()
@@ -109,3 +99,5 @@ class Player:
             self.decrease_lives()
         elif fight_result == -1:
             print("Your enemy missed!")
+        else:
+            print('User entered wrong data!')
