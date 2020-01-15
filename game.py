@@ -31,7 +31,7 @@ def play():
             player.defence(enemy)
     save_to_db(player_name,player.score)
 
-def save_to_db (name,score):
+def save_to_db(name, score):
     """
     function saving to db
     """
