@@ -20,7 +20,6 @@ class Enemy:
     def decrease_lives(self):
         self.level -= 1
         if self.level == 0:
-            #raise EnemyDown()
             print("Enemy Down!")
         return self.level
 
