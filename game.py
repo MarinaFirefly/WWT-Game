@@ -26,8 +26,15 @@ def play():
             level += 1
             enemy = Enemy(level)
             player.score += 5
-        print(f"Your score is {player.score}")
-        player.defence(enemy)
+            print(f"Your score is {player.score}")
+        else:
+            player.defence(enemy)
+    save_to_db(player_name,player.score)
+
+def save_to_db (name,score):
+    """
+    function saving to db
+    """
     conn = sqlite3.connect("data/scores.db")
     cursor = conn.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS 
@@ -35,11 +42,22 @@ def play():
     cursor.execute("SELECT COUNT(*) FROM scores")
     new_id = cursor.fetchone()[0] + 1
     now = datetime.date.today()
-    params = (new_id, player_name, int(player.score), now)
+    params = (new_id, name, score, now)
     cursor.execute("INSERT INTO scores VALUES (?,?,?,?)", params)
     conn.commit()
     conn.close()
 
+def read_from_db():
+    conn = sqlite3.connect("data/scores.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM scores ORDER BY score DESC LIMIT 10")
+    scores_result = cursor.fetchall()
+    if scores_result != []:
+        for result in scores_result:
+            print(f"{result[1]}     |   {result[3]}   |   {result[2]}")
+    else:
+        print("NO RESULTS IN DB!")
+    conn.close()
 
 if __name__ == '__main__':
     try:
@@ -65,16 +83,7 @@ if __name__ == '__main__':
             pass
         elif first_input == "score":
             try:
-                conn = sqlite3.connect("data/scores.db")
-                cursor = conn.cursor()
-                cursor.execute("SELECT * FROM scores ORDER BY score DESC LIMIT 10")
-                scores_result = cursor.fetchall()
-                if scores_result != []:
-                    for result in scores_result:
-                        print(f"{result[1]}     |   {result[3]}   |   {result[2]}")
-                else:
-                    print("NO RESULTS IN DB!")
-                conn.close()
+                read_from_db()
             except sqlite3.OperationalError:
                 pass
             new_game = input("WANT TO PLAY? (Y/N)   ")
