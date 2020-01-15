@@ -9,10 +9,12 @@ from ascii_img.help import rules
 from ascii_img.intro import intro
 from scripts.models import Enemy
 from scripts.models import Player
-# from exceptions import EnemyDown
 
 
 def play():
+    """
+    main function for game and write data to db
+    """
     ask_name()
     player_name = input("   ")
     player = Player(player_name)
@@ -86,4 +88,3 @@ if __name__ == '__main__':
         print("Unacceptable character was entered!")
     finally:
         print("GOOD BYE!")
-

@@ -2,14 +2,11 @@
 Behavior of our game work
 """
 import random
-
 from ascii_img.choice_of_hero import choice_of_hero
 from ascii_img.game_end import game_over
 from ascii_img.thief_win import thief_win
 from ascii_img.warrior_win import warrior_win
 from ascii_img.wizard_win import wizard_win
-#from exceptions import EnemyDown
-#from exceptions import GameOver
 
 
 class Enemy:
@@ -62,7 +59,6 @@ class Player:
     def decrease_lives(self):
         self.lives -= 1
         if self.lives == 0:
-           # raise GameOver
             game_over()
         return self.lives
 

@@ -3,7 +3,6 @@ ASCII scene for GAMOVER .
 """
 
 import time
-#from clear_screen import clear_screen
 
 
 def game_over():
@@ -54,10 +53,7 @@ def game_over():
                                  .'    '.   '.
                                 (________)____)
 			""")
-
     time.sleep(2)
-    # clear_screen()
-
     print(r"""
 
                            _

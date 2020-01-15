@@ -3,7 +3,6 @@ ASCII scene for credential Print.
 
 """
 import time
-#from clear_screen import clear_screen
 
 def credential():
     print(r"""
@@ -20,11 +19,7 @@ def credential():
 
 
     """)
-
     time.sleep(1)
-    #clear_screen()
-
-
     print(r"""
 
                                      _____  ________      _______ 
@@ -33,13 +28,8 @@ def credential():
                                     | |  | |  __|   \ \/ / \___ \ 
                                     | |__| | |____   \  /  ____) |
                                     |_____/|______|   \/  |_____/ 
-
     """)
-
     time.sleep(1)
-    #clear_screen()
-
-
     print(r"""
           __  __            _                  _           _    _   _                             
          |  \/  |          (_)                | |         | |  | | (_)                            
@@ -59,9 +49,6 @@ def credential():
                                            |___/ 
     """)
     time.sleep(1)
-    #clear_screen()
-
-
     print(r"""
                                                      _____  __  __ 
                                                     |  __ \|  \/  |
@@ -70,11 +57,8 @@ def credential():
                                                     | |    | |  | |
                                                     |_|    |_|  |_|
     """)
-
     time.sleep(1)
-
     print(r"""
-
                                      _____                  __      __          _              
                                     |_   _|                 \ \    / /         | |             
                                       | |  __ _  ___  _ __   \ \  / / __  _   _| | _______   __
@@ -84,5 +68,4 @@ def credential():
                                            __/ |                                               
                                           |___/  
                                     	  """)
-
     time.sleep(1)
