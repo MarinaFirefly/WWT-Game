@@ -53,7 +53,7 @@ def game_over():
                                  .'    '.   '.
                                 (________)____)
 			""")
-    time.sleep(2)
+    time.sleep(3)
     print(r"""
 
                            _
